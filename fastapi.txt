@@ -1,0 +1,62 @@
+Day 1 of learning FastAPI:
+---------------------------
+Official documentation:
+https://fastapi.tiangolo.com/
+
+FastAPI:
+-------
+FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints. 
+The key features are: Fast: Very high performance, on par with NodeJS and Go (thanks to Starlette and Pydantic). 
+One of the fastest Python frameworks available.
+
+User Interfaces with FastAPI:
+		1.	Swagger UI
+		2.	ReDoc
+1.	Swagger UI:
+		The Swagger UI is an open source project to visually render documentation for an API defined with the OpenAPI (Swagger) Specification.
+This interface used for:
+		Swagger UI allows anyone be it your development team or your end consumers to visualize and interact with the API's resources without 
+	having any of the implementation logic in place.
+2.	ReDoc:
+		Redoc is a popular display framework for the OpenAPI as well and is a favorite by many API gurus. Redoc started out as a API doc site 
+	for Rebilly docs but with many customizations evolved into its own unique framework.
+This interface used for:
+		Redoc is an open-source tool that generates API documentation from OpenAPI specifications. It's one of the most powerful free docs 
+	tools in the industry, producing clean, customizable documentation with an attractive three-panel design.
+===============================================================================================================================================================
+Type hints:
+----------
+
+Type hints give us more precisioned results while using autocomplete.
+
+Code example 1:	
+--------------
+
+@app.get("/items/{name}")
+async def get_items(name: str):
+	return {"name" :name}
+	
+print(get_items("sundar"))		
+		
+if __name__ == '__main__':
+uvicorn.run(app,host="127.0.0.1",port=8000)
+
+		1.	So now as we already pass in the type hint the autocomplete gives as suggestions related to the data type specified.
+		2.	In addition to that you get error analyis on the go 
+
+Run:
+---
+python3 app.py
+
+uvicorn app:app --reload
+
+Uvicornrun:
+----------
+
+http://127.0.0.1:8000
+
+http://127.0.0.1:8000/redoc
+
+http://127.0.0.1:8000/doc
+
+			
