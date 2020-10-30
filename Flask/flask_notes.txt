@@ -1,0 +1,78 @@
+Day 1 of Flask Framework:
+------------------------
+Offical documentation:
+https://youtu.be/lj4I_CvBnt0
+
+Flask:
+------
+	Flask is a web application framework written in Python. Armin Ronacher, who leads an international group of Python 
+enthusiasts named Pocco, develops it. Flask is based on Werkzeug WSGI toolkit and Jinja2 template engine. Both are Pocco projects.
+
+User interface of Flask framework:
+
+1.	Werkzeug WSGI toolkit:
+		Werkzeug is a comprehensive WSGI web application library. It began as a simple collection of various utilities 
+for WSGI applications and has become one of the most advanced WSGI utility libraries.
+2.	Jinja2 template engine:
+		Jinja is a web template engine for the Python programming language. ... Jinja is similar to the Django template 
+engine but provides Python-like expressions while ensuring that the templates are evaluated in a sandbox.
+	
+========================================================================================================================================
+Type hints:
+-----------
+
+Type hints give us more precisioned results while using complete.
+
+
+Code example:
+-------------
+
+from flask import flask
+app = flask(__name__)
+
+@app.route('/')
+def hello_world():
+	return 'Hello World'
+	
+if __name__ = '__main__':
+	app.run()
+	
+app.route(rule, options)
+	1.	rule: URL binding with the function.
+	2.	options: List of parameters to be forwarded to the underlying Rule object.
+	
+app.route('/hello')
+def hello_world():
+	return 'hello world'
+def hello_world():
+	return 'hello world'
+app.add_url_rule('/', 'hello', hello_world)
+	
+Debug mode:
+-----------
+	Flask application is started by calling run() method.
+
+app.debug = True
+app.run()
+app.run(debug = True)
+
+Variable rules:
+---------------
+from falsk import flask
+app = Flask(__name__)
+
+@app.route('/hello/<name>')
+def hello_name(name):
+	return 'Hello %s!' %name
+
+if __name__ == '__main__':
+	app.run(debug = True)
+=================================================================================================
+
+Global request object:
+----------------------
+		1. Form	Dictionary object containing key-value pairs of form parameters and values.
+		2. Args Parsed contents of qury string which is part of URL after question mark (?).
+		3. Cookies Dictionary object holding cookie names and values.
+		4. Files Data pertaining to uploaded file.
+		5. Method Current request method.
